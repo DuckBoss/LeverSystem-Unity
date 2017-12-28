@@ -7,7 +7,8 @@ A simple lever system for Unity Games.
 
 ## Usage
 1) Drag and drop the 'Lever' Prefab into your scene.
-2) Make sure your player gameobject tag matches the setting in the lever script. (Otherwise it won't detect the player)
+2) Set the 'Player Tag' setting in the lever script inspector. (Otherwise it won't detect the player)
 
 ## Easily Integrating In Your Games
-Use the 'Lever' scripts 'GetLeverState()' method to activate events in your game based on the lever state.
+- Use the 'Lever' scripts 'GetLeverState()' method to activate events in your game based on the lever state.
+- Use the 'Lever' scripts 'ToggleLever()' method to remotely toggle the state of the lever based on events that occur within your game.
