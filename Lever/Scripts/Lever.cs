@@ -15,6 +15,10 @@ public class Lever : MonoBehaviour {
 	[Header("References")]
 	public Animator leverAnim;
 
+	// Change this string to whatever your players tag is.
+	[Header("Player Detection")]
+	public string playerTag;
+
 	
 	// Change this string to whatever your mecanim animator toggle parameter is called.
 	[Header("Animator Properties")]
@@ -27,13 +31,13 @@ public class Lever : MonoBehaviour {
 
 	// Can only activate the lever when within trigger bounds.
 	private void OnTriggerEnter(Collider other) {
-		if(other.CompareTag("Player")) {
+		if(other.CompareTag(playerTag)) {
 			_canActivate = true;
 		}
 	}
 
 	// Use this for initialization
-	void Start () {
+	private void Start () {
 		if(!leverAnim)
 			leverAnim = GetComponent<Animator>();
 	}
@@ -61,7 +65,7 @@ public class Lever : MonoBehaviour {
 	}
 
 	// Sets the state of the lever as a boolean.
-	public void SetLeverState(bool val) {
+	private void SetLeverState(bool val) {
 		_leverState = val;
 	}
 
